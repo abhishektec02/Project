@@ -8,8 +8,10 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.niit.dao.CategoryDAO;
 import com.niit.model.Category;
+
 
 public class CategoryUnitTest 
 {
@@ -25,6 +27,7 @@ public class CategoryUnitTest
 	}
 	
 	@Test
+	@Ignore
 	public void addCategoryTest() 
 	{
 		Category category=new Category();
@@ -43,7 +46,7 @@ public class CategoryUnitTest
 	@Test
 	public void updateCategoryTest()
 	{
-		Category category=categoryDAO.getCategory(2);
+		Category category=categoryDAO.getCategory(1);
 		category.setCategoryDesc("Pencil cut t-shirt with Chain");
 		assertTrue("Problem in Updating the Category",categoryDAO.updateCategory(category));
 	}

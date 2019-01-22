@@ -113,7 +113,7 @@ public class ProductController
 	}
 	
 	@RequestMapping("/ProductDisplay")
-	public String displayAllProduct(Model m)
+	public String displayAllProduct(@ModelAttribute("product")Product product, Model m)
 	{
 		m.addAttribute("pageinfo" , "Product Catalog" );
 		List<Product> listProducts = productDAO.listProducts();
